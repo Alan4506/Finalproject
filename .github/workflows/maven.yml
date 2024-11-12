@@ -27,7 +27,7 @@ jobs:
     - name: Run Checkstyle
       run: mvn checkstyle:checkstyle
     - name: Upload Checkstyle Report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: checkstyle-report
         path: target/site/checkstyle.html
@@ -35,7 +35,7 @@ jobs:
     - name: Run PMD Static Analysis
       run: mvn pmd:check
     - name: Upload PMD Report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: pmd-report
         path: target/site/pmd.html
@@ -43,7 +43,7 @@ jobs:
     - name: Run JaCoCo Coverage
       run: mvn jacoco:report
     - name: Upload JaCoCo Report
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: jacoco-report
         path: target/site/jacoco/index.html
