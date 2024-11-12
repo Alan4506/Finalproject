@@ -22,38 +22,46 @@ jobs:
         cache: maven
 
     - name: Build and Run All Tests
-      run: mvn clean verify
+      run: |
+        cd teamproject
+        mvn clean verify
 
     - name: Run Checkstyle
-      run: mvn checkstyle:checkstyle
+      run: |
+        cd teamproject
+        mvn checkstyle:checkstyle
     - name: Upload Checkstyle Report
       uses: actions/upload-artifact@v3
       with:
         name: checkstyle-report
-        path: target/site/checkstyle.html
+        path: teamproject/target/site/checkstyle.html
 
     - name: Run PMD Static Analysis
-      run: mvn pmd:check
+      run: |
+        cd teamproject
+        mvn pmd:check
     - name: Upload PMD Report
       uses: actions/upload-artifact@v3
       with:
         name: pmd-report
-        path: target/site/pmd.html
+        path: teamproject/target/site/pmd.html
 
     - name: Run JaCoCo Coverage
-      run: mvn jacoco:report
+      run: |
+        cd teamproject
+        mvn jacoco:report
     - name: Upload JaCoCo Report
       uses: actions/upload-artifact@v3
       with:
         name: jacoco-report
-        path: target/site/jacoco/index.html
+        path: teamproject/target/site/jacoco/index.html
 
     - name: Generate Coverage Summary
       uses: danielpalme/ReportGenerator-GitHub-Action@5.2.0
       with:
-        reports: target/site/jacoco/jacoco.xml
+        reports: teamproject/target/site/jacoco/jacoco.xml
         reporttypes: HtmlInline;Cobertura;TextSummary
-        sourcedirs: src/main/java
+        sourcedirs: teamproject/src/main/java
         title: JaCoCo Code Coverage Report
     - name: Upload Coverage Summary
-      run: cat target/site/jacoco/Summary.txt || echo "No summary available"
+      run: cat teamproject/target/site/jacoco/Summary.txt || echo "No summary available"
