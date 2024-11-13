@@ -9,7 +9,9 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-
+    defaults:
+      run:
+        working-directory: teamproject
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -22,14 +24,10 @@ jobs:
         cache: maven
 
     - name: Build and Run All Tests
-      run: |
-        cd teamproject
-        mvn clean verify
+      run: mvn clean verify
 
     - name: Run Checkstyle
-      run: |
-        cd teamproject
-        mvn checkstyle:checkstyle
+      run: mvn checkstyle:checkstyle
     - name: Upload Checkstyle Report
       uses: actions/upload-artifact@v3
       with:
@@ -37,9 +35,7 @@ jobs:
         path: teamproject/target/site/checkstyle.html
 
     - name: Run PMD Static Analysis
-      run: |
-        cd teamproject
-        mvn pmd:check || true
+      run: mvn pmd:check || true
     - name: Upload PMD Report
       uses: actions/upload-artifact@v3
       with:
@@ -47,9 +43,7 @@ jobs:
         path: teamproject/target/site/pmd.html
 
     - name: Run JaCoCo Coverage
-      run: |
-        cd teamproject
-        mvn jacoco:report
+      run: mvn jacoco:report
     - name: Upload JaCoCo Report
       uses: actions/upload-artifact@v3
       with:
