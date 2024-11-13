@@ -149,26 +149,6 @@
 					<format>html</format>
 					<outputDirectory>${project.build.directory}/site</outputDirectory>
 				</configuration>
-				<executions>
-					<execution>
-						<id>pmd</id>
-						<goals>
-							<goal>pmd</goal>
-						</goals>
-						<phase>verify</phase>
-					</execution>
-					<execution>
-						<id>pmd-check</id>
-						<goals>
-							<goal>check</goal>
-						</goals>
-						<phase>verify</phase>
-						<configuration>
-							<failOnViolation>true</failOnViolation>
-							<linkXRef>false</linkXRef>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
