@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GenericExceptionHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">teamproject</a> &gt; <a href="index.source.html" class="el_package">dev.teamproject.exceptionHandler</a> &gt; <span class="el_source">GenericExceptionHandler.java</span></div><h1>GenericExceptionHandler.java</h1><pre class="source lang-java linenums">package dev.teamproject.exceptionHandler;
+
+import dev.teamproject.apiResponse.GenericApiResponse;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@ControllerAdvice
+<span class="nc" id="L15">public class GenericExceptionHandler {</span>
+  /**
+   * Handle user not found exception response entity.
+   *
+   * @param ex the ex
+   * @return the response entity
+   */
+  @ExceptionHandler(UserNotFoundException.class)
+  public ResponseEntity&lt;GenericApiResponse&lt;String&gt;&gt; handleUserNotFoundException(
+      UserNotFoundException ex) {
+<span class="nc" id="L25">    GenericApiResponse&lt;String&gt; response = new GenericApiResponse&lt;&gt;(ex.getMessage(), null, false);</span>
+<span class="nc" id="L26">    return new ResponseEntity&lt;&gt;(response, HttpStatus.NOT_FOUND);</span>
+  }
+
+  /**
+   * Handle illegal argument exception response entity.
+   *
+   * @param ex the ex
+   * @return the response entity
+   */
+  @ExceptionHandler(IllegalArgumentException.class)
+  public ResponseEntity&lt;GenericApiResponse&lt;String&gt;&gt; handleIllegalArgumentException(
+      IllegalArgumentException ex) {
+<span class="nc" id="L38">    GenericApiResponse&lt;String&gt; response = new GenericApiResponse&lt;&gt;(ex.getMessage(), null, false);</span>
+<span class="nc" id="L39">    return new ResponseEntity&lt;&gt;(response, HttpStatus.BAD_REQUEST);</span>
+  }
+
+  /**
+   * Handle general exception response entity.
+   *
+   * @param ex the ex
+   * @return the response entity
+   */
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity&lt;GenericApiResponse&lt;String&gt;&gt; handleGeneralException(Exception ex) {
+<span class="nc" id="L50">    GenericApiResponse&lt;String&gt; response = new GenericApiResponse&lt;&gt;(&quot;An unexpected error occurred&quot;, ex.getMessage(), false);</span>
+<span class="nc" id="L51">    return new ResponseEntity&lt;&gt;(response, HttpStatus.INTERNAL_SERVER_ERROR);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

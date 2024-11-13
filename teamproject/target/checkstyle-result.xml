@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\apiResponse\GenericApiResponse.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;dev.teamproject.apiResponse&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="3" column="1" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
+<error line="32" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\common\CommonTypes.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\exceptionHandler\GenericExceptionHandler.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;dev.teamproject.exceptionHandler&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="11" column="1" severity="warning" message="Extra separation in import group before &apos;java.util.HashMap&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="11" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.HashMap&apos; import. Should be before &apos;org.springframework.web.bind.annotation.ResponseStatus&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="12" column="1" severity="warning" message="Wrong lexicographical order for &apos;java.util.Map&apos; import. Should be before &apos;org.springframework.web.bind.annotation.ResponseStatus&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="14" column="1" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
+<error line="50" severity="warning" message="Line is longer than 100 characters (found 123)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\exceptionHandler\IllegalArgumentException.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;dev.teamproject.exceptionHandler&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="3" column="1" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\exceptionHandler\UserNotFoundException.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;dev.teamproject.exceptionHandler&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="3" column="1" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\meeting\Meeting.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\meeting\MeetingController.java">
+<error line="11" column="1" severity="warning" message="Extra separation in import group before &apos;org.springframework.http.HttpStatus&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" column="1" severity="warning" message="Extra separation in import group before &apos;org.springframework.http.ResponseEntity&apos;" source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="100" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="107" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="109" column="31" severity="warning" message="Abbreviation in name &apos;meetingDTO&apos; must contain no more than &apos;1&apos; consecutive capital letters." source="com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\meeting\MeetingDTO.java">
+<error line="4" column="1" severity="warning" message="Wrong lexicographical order for &apos;jakarta.validation.constraints.NotNull&apos; import. Should be before &apos;java.sql.Timestamp&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="5" column="1" severity="warning" message="&apos;CLASS_DEF&apos; should be separated from previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.EmptyLineSeparatorCheck"/>
+<error line="5" column="1" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocTypeCheck"/>
+<error line="5" column="14" severity="warning" message="Abbreviation in name &apos;MeetingDTO&apos; must contain no more than &apos;1&apos; consecutive capital letters." source="com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\meeting\MeetingRepo.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\meeting\MeetingService.java">
+<error line="64" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+<error line="65" column="31" severity="warning" message="Abbreviation in name &apos;meetingDTO&apos; must contain no more than &apos;1&apos; consecutive capital letters." source="com.puppycrawl.tools.checkstyle.checks.naming.AbbreviationAsWordInNameCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\participant\Participant.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\participant\ParticipantController.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\participant\ParticipantRepo.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\participant\ParticipantService.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\ProjectApplication.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\request\Request.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\request\RequestController.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\request\RequestId.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\request\RequestRepo.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\request\RequestService.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\timeslot\TimeSlot.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\timeslot\TimeSlotController.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\timeslot\TimeSlotRepo.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\timeslot\TimeSlotService.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\user\User.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\user\UserController.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\user\UserRepo.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\java\dev\teamproject\user\UserService.java">
+<error line="28" column="3" severity="warning" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocMethodCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\MeetingServiceUnitTests.java">
+<error line="127" column="1" severity="warning" message="Comment has incorrect indentation level 0, expected is 2, indentation should be the same level as line 115." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\MeetingUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\ParticipantServiceUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\ParticipantUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\RequestControllerTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\RequestIdUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\RequestServiceTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\RequestUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\TimeSlotControllerTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\TimeSlotServiceTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\TimeSlotUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\UserControllerUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\UserServiceUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\test\java\dev\teamproject\UserUnitTests.java">
+</file>
+<file name="C:\Users\10297\Desktop\Finalproject\teamproject\src\main\resources\application.properties">
+</file>
+</checkstyle>

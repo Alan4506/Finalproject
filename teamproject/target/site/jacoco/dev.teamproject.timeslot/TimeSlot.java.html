@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TimeSlot.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">teamproject</a> &gt; <a href="index.source.html" class="el_package">dev.teamproject.timeslot</a> &gt; <span class="el_source">TimeSlot.java</span></div><h1>TimeSlot.java</h1><pre class="source lang-java linenums">package dev.teamproject.timeslot;
+
+import dev.teamproject.common.CommonTypes;
+import dev.teamproject.user.User;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import java.time.LocalTime;
+import java.util.Objects;
+
+/**
+ * Represents a time slot for a user, including availability and scheduling information.
+ */
+
+@Entity
+@Table(name = &quot;TimeSlot&quot;)
+public class TimeSlot {
+  
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = &quot;TID&quot;)
+  private int tid;
+  
+  @ManyToOne
+  @JoinColumn(name = &quot;UID&quot;, nullable = false)
+  private User user;
+  
+  @Enumerated(EnumType.STRING)
+  @Column(name = &quot;day&quot;, nullable = false)
+  private CommonTypes.Day day;
+  
+  @Column(name = &quot;start_time&quot;, nullable = false)
+  private LocalTime startTime;
+  
+  @Column(name = &quot;end_time&quot;, nullable = false)
+  private LocalTime endTime;
+  
+  @Enumerated(EnumType.STRING)
+  @Column(name = &quot;availability&quot;, nullable = false)
+  private CommonTypes.Availability availability;
+  
+  // Constructors
+<span class="fc" id="L50">  public TimeSlot() {</span>
+<span class="fc" id="L51">  }</span>
+
+  /**
+   * construct a time slot given user day, information of time and availability.
+   */
+
+  public TimeSlot(User user, CommonTypes.Day day, LocalTime startTime,
+<span class="fc" id="L58">                  LocalTime endTime, CommonTypes.Availability availability) {</span>
+<span class="fc" id="L59">    this.user = user;</span>
+<span class="fc" id="L60">    this.day = day;</span>
+<span class="fc" id="L61">    this.startTime = startTime;</span>
+<span class="fc" id="L62">    this.endTime = endTime;</span>
+<span class="fc" id="L63">    this.availability = availability;</span>
+<span class="fc" id="L64">  }</span>
+  
+  // Getters and Setters
+  public int getTid() {
+<span class="fc" id="L68">    return tid;</span>
+  }
+  
+  public void setTid(int tid) {
+<span class="fc" id="L72">    this.tid = tid;</span>
+<span class="fc" id="L73">  }</span>
+  
+  public User getUser() {
+<span class="fc" id="L76">    return user;</span>
+  }
+  
+  public void setUser(User user) {
+<span class="fc" id="L80">    this.user = user;</span>
+<span class="fc" id="L81">  }</span>
+  
+  public CommonTypes.Day getDay() {
+<span class="fc" id="L84">    return day;</span>
+  }
+  
+  public void setDay(CommonTypes.Day day) {
+<span class="fc" id="L88">    this.day = day;</span>
+<span class="fc" id="L89">  }</span>
+  
+  public LocalTime getStartTime() {
+<span class="fc" id="L92">    return startTime;</span>
+  }
+  
+  public void setStartTime(LocalTime startTime) {
+<span class="fc" id="L96">    this.startTime = startTime;</span>
+<span class="fc" id="L97">  }</span>
+  
+  public LocalTime getEndTime() {
+<span class="fc" id="L100">    return endTime;</span>
+  }
+  
+  public void setEndTime(LocalTime endTime) {
+<span class="fc" id="L104">    this.endTime = endTime;</span>
+<span class="fc" id="L105">  }</span>
+  
+  public CommonTypes.Availability getAvailability() {
+<span class="fc" id="L108">    return availability;</span>
+  }
+  
+  public void setAvailability(CommonTypes.Availability availability) {
+<span class="fc" id="L112">    this.availability = availability;</span>
+<span class="fc" id="L113">  }</span>
+  
+  // toString
+  @Override
+  public String toString() {
+<span class="fc" id="L118">    return &quot;TimeSlot{&quot;</span>
+      + &quot;tid=&quot; + tid
+<span class="fc" id="L120">      + &quot;, user=&quot; + user.getUid()</span>
+      + &quot;, day=&quot; + day
+      + &quot;, startTime=&quot; + startTime
+      + &quot;, endTime=&quot; + endTime
+      + &quot;, availability=&quot; + availability
+      + '}';
+  }
+  
+  // equals and hashCode
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L131" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L132">      return true;</span>
+    }
+<span class="pc bpc" id="L134" title="2 of 4 branches missed.">    if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L135">      return false;</span>
+    }
+    
+<span class="fc" id="L138">    TimeSlot timeSlot = (TimeSlot) o;</span>
+    
+<span class="fc bfc" id="L140" title="All 2 branches covered.">    return tid == timeSlot.tid;</span>
+  }
+  
+  @Override
+  public int hashCode() {
+<span class="fc" id="L145">    return Objects.hash(tid);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ParticipantController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">teamproject</a> &gt; <a href="index.source.html" class="el_package">dev.teamproject.participant</a> &gt; <span class="el_source">ParticipantController.java</span></div><h1>ParticipantController.java</h1><pre class="source lang-java linenums">package dev.teamproject.participant;
+
+import dev.teamproject.common.CommonTypes;
+import dev.teamproject.meeting.Meeting;
+import dev.teamproject.user.User;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * Handles incoming requests related to participants, providing API endpoints
+ * for managing participant records in the application.
+ */
+
+@RestController
+@RequestMapping(path = &quot;api/v1/participants&quot;)
+public class ParticipantController {
+  private final ParticipantService participantService;
+  
+  @Autowired
+<span class="nc" id="L30">  public ParticipantController(ParticipantService participantService) {</span>
+<span class="nc" id="L31">    this.participantService = participantService;</span>
+<span class="nc" id="L32">  }</span>
+  
+  @PostMapping(&quot;/register&quot;)
+  public void saveParticipant(@RequestBody Participant participant) {
+<span class="nc" id="L36">    participantService.save(participant);</span>
+<span class="nc" id="L37">  }</span>
+
+  @DeleteMapping()
+  public ResponseEntity&lt;Void&gt; deleteParticipant(@RequestParam(&quot;pid&quot;) int pid) {
+<span class="nc" id="L41">    participantService.deleteParticipant(pid);</span>
+<span class="nc" id="L42">    return ResponseEntity.noContent().build();</span>
+  }
+  
+  @GetMapping(&quot;/findById&quot;)
+  public Participant findById(@RequestParam(&quot;Id&quot;) int pid) {
+<span class="nc" id="L47">    return participantService.findById(pid);</span>
+  }
+  
+  @GetMapping(&quot;/findAll&quot;)
+  public List&lt;Participant&gt; findAll() {
+<span class="nc" id="L52">    return participantService.findAll();</span>
+  }
+  
+  @GetMapping(&quot;/findByMeeting&quot;)
+  public List&lt;Participant&gt; findByMeeting(@RequestParam(&quot;meeting&quot;) Meeting meeting) {
+<span class="nc" id="L57">    return participantService.findByMeeting(meeting);</span>
+  }
+  
+  @GetMapping(&quot;/findByUser&quot;)
+  public List&lt;Participant&gt; findByUser(@RequestParam(&quot;user&quot;) User user) {
+<span class="nc" id="L62">    return participantService.findByUser(user);</span>
+  }
+  
+  @GetMapping(&quot;/findByStatus&quot;)
+  public List&lt;Participant&gt; findByStatus(
+      @RequestParam(&quot;Status&quot;) CommonTypes.ParticipantStatus status) {
+    //should check if input valid
+<span class="nc" id="L69">    return participantService.findByStatus(status);</span>
+  }
+  
+  @GetMapping(&quot;/findByRole&quot;)
+  public List&lt;Participant&gt; findByRole(@RequestParam(&quot;Role&quot;) CommonTypes.Role role) {
+    //should check if input valid
+<span class="nc" id="L75">    return participantService.findByRole(role);</span>
+  }
+  
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
