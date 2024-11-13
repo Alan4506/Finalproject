@@ -34,9 +34,3 @@ jobs:
 
     - name: Run JaCoCo Coverage
       run: mvn jacoco:report
-
-    - name: Upload Site Reports
-      uses: actions/upload-artifact@v3
-      with:
-        name: site-reports
-        path: target/site
