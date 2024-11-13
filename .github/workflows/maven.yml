@@ -55,16 +55,3 @@ jobs:
       with:
         name: jacoco-report
         path: teamproject/target/site/jacoco/index.html
-
-    - name: Generate Coverage Summary
-      uses: danielpalme/ReportGenerator-GitHub-Action@5.2.0
-      with:
-        reports: teamproject/target/site/jacoco/jacoco.xml
-        reporttypes: HtmlInline;Cobertura;TextSummary
-        sourcedirs: teamproject/src/main/java
-        title: JaCoCo Code Coverage Report
-    - name: Upload Coverage Summary
-      uses: actions/upload-artifact@v3
-      with:
-        name: coverage-summary
-        path: teamproject/target/site/jacoco/Summary.txt
