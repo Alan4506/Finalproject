@@ -32,7 +32,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: checkstyle-report
-        path: teamproject/target/site/checkstyle.html
+        path: |
+          target/site/checkstyle.html
+          target/site/css/**
+          target/site/image/**
 
     - name: Run PMD Static Analysis
       run: mvn pmd:check || true
@@ -40,7 +43,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: pmd-report
-        path: teamproject/target/site/pmd.html
+        path: |
+          target/site/pmd.html
+          target/site/css/**
+          target/site/image/**
 
     - name: Run JaCoCo Coverage
       run: mvn jacoco:report
@@ -48,4 +54,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: jacoco-report
-        path: teamproject/target/site/jacoco/index.html
+        path: target/site/jacoco
