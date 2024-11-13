@@ -63,11 +63,6 @@ jobs:
         reporttypes: HtmlInline;Cobertura;TextSummary
         sourcedirs: teamproject/src/main/java
         title: JaCoCo Code Coverage Report
-    - name: Save Coverage Summary to Summary.txt
-      run: |
-        cd teamproject/target/site/jacoco
-        echo "Generating coverage summary..."
-        danielpalme/ReportGenerator-GitHub-Action@5.2.0 | Out-File Summary.txt -Encoding utf8
     - name: Upload Coverage Summary
       uses: actions/upload-artifact@v3
       with:
